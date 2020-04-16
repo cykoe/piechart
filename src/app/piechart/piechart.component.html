@@ -1,0 +1,15 @@
+<div class="container">
+  <svg viewBox="0 0 32 32">
+    <circle
+      *ngFor="let sector of sectors"
+      cx="16"
+      cy="16"
+      r="16"
+      fill="transparent"
+      [attr.stroke]="sector.color"
+      stroke-width="16"
+      attr.stroke-dasharray="{{sector.p}} 100"
+      attr.stroke-dashoffset="{{sector.offset}}"
+    ></circle>
+  </svg>
+</div>
