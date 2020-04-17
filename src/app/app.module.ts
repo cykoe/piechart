@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PiechartComponent } from './piechart/piechart.component';
+import { ModifyDashDirective } from './modify-dash.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PiechartComponent
+    PiechartComponent,
+    ModifyDashDirective
   ],
   imports: [
     BrowserModule

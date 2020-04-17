@@ -1,44 +1,21 @@
 <div class="container">
-    <button (click)="spin()">Change the wheel</button>
-    <button (click)="spin2()">Change the wheel</button>
-    <svg class="donut" width="300" height="100%" viewBox="0 0 42 42">
-    <!--  GREEN  -->
+  <svg class="donut" viewBox="0 0 42 42">
+    <!--  GREEN -->
     <circle
-      id="donut-segment2"
-      cx="21"
-      cy="21"
-      r="15.91549430918954"
-      fill="transparent"
-      stroke="#b1c94e"
-      stroke-width="3"
-      stroke-dasharray="0 100"
-      stroke-dashoffset="25"
-    ></circle>
-
-    <!--  BLUE  -->
-    <circle
-      id="donut-segment3"
-      cx="21"
-      cy="21"
-      r="15.91549430918954"
-      fill="transparent"
-      stroke="#aaddff"
-      stroke-width="3"
-      stroke-dasharray="0 100"
-      stroke-dashoffset="25"
-    ></circle>
-
-    <!--  PURPLE  -->
-    <circle
+      *ngFor="let sector of sectors"
+      appModifyDash
+      [dashArray]="sector.array"
+      [dashOffset]="sector.offset"
       id="donut-segment1"
+      class="trans"
       cx="21"
       cy="21"
       r="15.91549430918954"
       fill="transparent"
-      stroke="#ce4b99"
-      stroke-width="3"
+      [attr.stroke]="sector.color"
       stroke-dasharray="0 100"
       stroke-dashoffset="25"
     ></circle>
+    <g><text id="totalValue" x="50%" y="50%">{{sectors[0].p}}%</text></g>
   </svg>
 </div>
